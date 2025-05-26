@@ -47,8 +47,11 @@ app.get("/pay", async (req, res) => {
     const paymentLink = orderRes.data._links.payment.href;
     res.redirect(paymentLink);
   } catch (err) {
-    console.error(err.response?.data || err.message);
-    res.status(500).send("Error creating payment link");
+   console.error("Full Error:", err.response?.data || err.message);
+res.status(500).send(`
+  <h3>Error creating payment link</h3>
+  <pre>${JSON.stringify(err.response?.data || err.message, null, 2)}</pre>
+`);
   }
 });
 
