@@ -1,7 +1,6 @@
 {
-  "name": "tilda-ngenius",
+  "name": "tilda-ngenius-payment",
   "version": "1.0.0",
-  "description": "N-Genius Hosted Payment Page integration for Tilda",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
